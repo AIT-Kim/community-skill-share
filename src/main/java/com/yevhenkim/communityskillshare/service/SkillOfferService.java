@@ -8,7 +8,6 @@ import java.util.List;
 
 @Service
 public class SkillOfferService {
-
     private final SkillOfferRepository skillOfferRepository;
 
     @Autowired
@@ -25,3 +24,4 @@ public class SkillOfferService {
     }
 
 }
+

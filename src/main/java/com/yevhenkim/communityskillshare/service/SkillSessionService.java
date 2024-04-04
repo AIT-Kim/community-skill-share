@@ -8,7 +8,6 @@ import java.util.List;
 
 @Service
 public class SkillSessionService {
-
     private final SkillSessionRepository skillSessionRepository;
 
     @Autowired
@@ -24,5 +23,5 @@ public class SkillSessionService {
         return skillSessionRepository.findAll();
     }
 
-
 }
+

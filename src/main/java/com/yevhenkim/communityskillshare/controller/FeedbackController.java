@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/api/feedback")
 public class FeedbackController {
-
     private final FeedbackService feedbackService;
 
     @Autowired

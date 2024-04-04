@@ -60,3 +60,4 @@ public class SkillSession {
         PLANNED, COMPLETED, CANCELLED
     }
 }
+

@@ -6,3 +6,4 @@ import com.yevhenkim.communityskillshare.model.SkillSession;
 public interface SkillSessionRepository extends JpaRepository<SkillSession, Long> {
     //методы поиска по статусу сессии, участникам
 }
+

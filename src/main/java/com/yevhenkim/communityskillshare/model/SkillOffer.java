@@ -56,3 +56,4 @@ public class SkillOffer {
         this.description = description;
     }
 }
+

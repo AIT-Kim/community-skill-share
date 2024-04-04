@@ -6,3 +6,4 @@ import com.yevhenkim.communityskillshare.model.Feedback;
 public interface FeedbackRepository extends JpaRepository<Feedback, Long> {
     // поиск по сессии, пользователю
 }
+

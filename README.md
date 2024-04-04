@@ -23,6 +23,4 @@ Community Skill Share — это платформа для обмена навы
 - **Swagger или SpringDoc OpenAPI**
 - **Maven или Gradle + Docker**
 
-
-© 2024, Yevhen Kim
-All Rights Reserved
+Это учебный проект

@@ -7,7 +7,6 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class UserService {
-
     private final UserRepository userRepository;
 
     @Autowired
@@ -23,3 +22,4 @@ public class UserService {
 
     // поиск пользователя по id или email
 }
+

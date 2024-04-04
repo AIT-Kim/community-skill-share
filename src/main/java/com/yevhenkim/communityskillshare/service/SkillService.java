@@ -8,7 +8,6 @@ import java.util.List;
 
 @Service
 public class SkillService {
-
     private final SkillRepository skillRepository;
 
     @Autowired
@@ -23,6 +22,5 @@ public class SkillService {
     public List<Skill> getAllSkills() {
         return skillRepository.findAll();
     }
-
 
 }
