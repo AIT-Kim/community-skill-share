@@ -1,8 +1,6 @@
 package com.yevhenkim.communityskillshare.model;
 
-
 import jakarta.persistence.*;
-
 import java.time.LocalDateTime;
 
 @Entity

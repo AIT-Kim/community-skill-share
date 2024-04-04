@@ -1,6 +1,5 @@
 package com.yevhenkim.communityskillshare.model;
 
-
 import jakarta.persistence.*;
 
 @Entity
@@ -43,4 +42,5 @@ public class Skill {
     public void setDescription(String description) {
         this.description = description;
     }
+
 }

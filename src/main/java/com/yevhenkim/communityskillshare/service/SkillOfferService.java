@@ -4,7 +4,6 @@ import com.yevhenkim.communityskillshare.model.SkillOffer;
 import com.yevhenkim.communityskillshare.repository.SkillOfferRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import java.util.List;
 
 @Service

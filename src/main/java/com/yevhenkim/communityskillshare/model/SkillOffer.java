@@ -1,6 +1,5 @@
 package com.yevhenkim.communityskillshare.model;
 
-
 import jakarta.persistence.*;
 
 @Entity
