@@ -1,9 +1,11 @@
 package com.yevhenkim.communityskillshare.repository;
 
-import org.springframework.data.jpa.repository.JpaRepository;
 import com.yevhenkim.communityskillshare.model.SkillSession;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import java.util.List;
 
 public interface SkillSessionRepository extends JpaRepository<SkillSession, Long> {
-    //методы поиска по статусу сессии, участникам
+    List<SkillSession> findByStatus(String status);
 }
 

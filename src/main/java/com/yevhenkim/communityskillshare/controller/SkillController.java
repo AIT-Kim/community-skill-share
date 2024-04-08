@@ -30,5 +30,12 @@ public class SkillController {
         return ResponseEntity.ok(skills);
     }
 
+    @GetMapping("/user/{userId}")
+    public ResponseEntity<List<Skill>> getSkillsByUserId(@PathVariable Long userId) {
+        List<Skill> skills = skillService.getSkillsByUserId(userId);
+        return ResponseEntity.ok(skills);
+    }
+
+
 }
 

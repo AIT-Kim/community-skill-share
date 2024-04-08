@@ -1,9 +1,11 @@
 package com.yevhenkim.communityskillshare.repository;
 
-import org.springframework.data.jpa.repository.JpaRepository;
 import com.yevhenkim.communityskillshare.model.Skill;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import java.util.List;
 
 public interface SkillRepository extends JpaRepository<Skill, Long> {
-    // методы поиска
+    List<Skill> findByUserId(Long userId);
 }
 

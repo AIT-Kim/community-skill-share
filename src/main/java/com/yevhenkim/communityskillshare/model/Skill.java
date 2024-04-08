@@ -16,6 +16,12 @@ public class Skill {
     @Column(length = 1000)
     private String description;
 
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "user_id")
+    private User user;
+
+
+
     public Skill() {
     }
 
@@ -41,6 +47,14 @@ public class Skill {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
     }
 
 }

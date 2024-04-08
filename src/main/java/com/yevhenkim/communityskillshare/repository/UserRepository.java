@@ -3,7 +3,9 @@ package com.yevhenkim.communityskillshare.repository;
 import com.yevhenkim.communityskillshare.model.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 
+import java.util.Optional;
+
 public interface UserRepository extends JpaRepository<User, Long> {
-    // методы для поиска по email и др.
+    Optional<User> findByEmail(String email);
 }
 

@@ -30,6 +30,10 @@ public class SkillSessionController {
         return ResponseEntity.ok(skillSessions);
     }
 
-    // получение сессий по статусу
+    @GetMapping("/status")
+    public ResponseEntity<List<SkillSession>> getSkillSessionsByStatus(@RequestParam String status) {
+        List<SkillSession> skillSessions = skillSessionService.getSkillSessionsByStatus(status);
+        return ResponseEntity.ok(skillSessions);
+    }
 }
 

@@ -23,5 +23,9 @@ public class SkillSessionService {
         return skillSessionRepository.findAll();
     }
 
+    public List<SkillSession> getSkillSessionsByStatus(String status) {
+        return skillSessionRepository.findByStatus(status);
+    }
+
 }
 
