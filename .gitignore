@@ -66,3 +66,5 @@ hs_err_pid*
 *.log
 spring-boot-admin.log
 
+### MacOs ###
+.DS_Store

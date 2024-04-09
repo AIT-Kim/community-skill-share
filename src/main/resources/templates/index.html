@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Community Skill Share</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}" />
+</head>
+<body>
+<h1>Community Skill Share</h1>
+<p>Sharing skills in the community</p>
+<div class="container">
+    <h1 th:text="${message}">Приветственное сообщение</h1>
+    <h2>Особенности:</h2>
+    <ul>
+        <li th:each="feature : ${features}" th:text="${feature}">Особенность</li>
+    </ul>
+</div>
+</body>
+</html>

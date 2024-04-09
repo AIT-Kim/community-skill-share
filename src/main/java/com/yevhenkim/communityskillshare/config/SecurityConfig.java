@@ -16,21 +16,27 @@ import org.springframework.security.web.SecurityFilterChain;
 @EnableGlobalMethodSecurity(prePostEnabled = true)
 public class SecurityConfig {
 
+
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
+
+
         http
-                .authorizeRequests(authorizeRequests ->
-                        authorizeRequests
-                                .requestMatchers("/secret").authenticated()
+                .authorizeRequests((matchers) -> matchers
                                 .requestMatchers("/","/home","/api/public/**").permitAll()
+                                .requestMatchers("/", "/greeting","/home", "/index.html", "/css/**", "/js/**", "/images/**").permitAll()
                                 .requestMatchers("/admin/secret").authenticated()
                                 .requestMatchers("/admin/**").hasRole("ADMIN")
+                                .requestMatchers("/secret").authenticated()
                                 .anyRequest().authenticated()
                 )
+                /*
                 .formLogin(form -> form
                         .loginPage("/login")
                         .permitAll()
                 )
+
+                 */
                 .httpBasic(Customizer.withDefaults())
                 .logout(logout -> logout
                         .permitAll()
@@ -44,4 +50,6 @@ public class SecurityConfig {
     public PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
     }
+
+
 }
