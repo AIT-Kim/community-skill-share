@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import styles from './HomePage.module.css';
 
 interface Feature {
     message: string;
@@ -16,28 +17,28 @@ const HomePage: React.FC = () => {
     }, []);
 
     return (
-        <div>
-            <header>
+        <div className={styles.container}>
+            <header className={styles.header}>
                 <h1>{data ? data.message : 'Loading...'}</h1>
             </header>
-            <nav>
-                <ul>
+            <nav className={styles.nav}>
+                <ul className={styles.menu}>
                     <li>Home</li>
                     <li>About</li>
                     <li>Services</li>
                     <li>Contact</li>
                 </ul>
             </nav>
-            <main>
+            <main className={styles.main}>
                 {data && data.features.map((feature, index) => (
-                    <section key={index}>
+                    <section className={styles.feature} key={index}>
                         <h2>{feature}</h2>
-                        <p>description.</p>
+                        <p>Description of the feature.</p>
                     </section>
                 ))}
             </main>
-            <footer>
-                <p>&copy; 2024 Your Website Name</p>
+            <footer className={styles.footer}>
+                <p>&copy; 2024 </p>
             </footer>
         </div>
     );
