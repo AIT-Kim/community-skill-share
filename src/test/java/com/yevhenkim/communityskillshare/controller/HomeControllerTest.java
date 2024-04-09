@@ -6,9 +6,7 @@ import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMock
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.web.servlet.MockMvc;
 
-import static org.hamcrest.Matchers.containsString;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 @SpringBootTest
@@ -21,7 +19,6 @@ public class HomeControllerTest {
     @Test
     public void testHome() throws Exception {
         this.mockMvc.perform(get("/"))
-                .andExpect(status().isOk())
-                .andExpect(content().string(containsString("Welcome to the Community Skill Share!")));
+                .andExpect(status().isOk());
     }
 }

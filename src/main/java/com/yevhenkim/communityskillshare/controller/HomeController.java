@@ -26,6 +26,11 @@ public class HomeController {
         return response;
     }
 
+    @GetMapping("/")
+    public String homelocal() {
+        return "index";
+    }    
+
 
 
     @GetMapping("/greeting")
@@ -34,11 +39,4 @@ public class HomeController {
         return "greeting";
     }
 
-/*
-    @GetMapping("/login")
-    public String login() {
-        return "index";
-    }
-
- */
 }
