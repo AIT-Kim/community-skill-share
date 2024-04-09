@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+            http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+
+    <changeSet id="1" author="yevhenkim">
+        <insert tableName="users">
+            <column name="id" valueNumeric="1"/>
+            <column name="email" value="jane.doe@example.com"/>
+            <column name="password" value="password1"/>
+            <column name="name" value="Jane Doe"/>
+        </insert>
+        <insert tableName="users">
+            <column name="id" valueNumeric="2"/>
+            <column name="email" value="john.smith@example.com"/>
+            <column name="password" value="password2"/>
+            <column name="name" value="John Smith"/>
+        </insert>
+        <insert tableName="users">
+            <column name="id" valueNumeric="3"/>
+            <column name="email" value="alice.jones@example.com"/>
+            <column name="password" value="password3"/>
+            <column name="name" value="Alice Jones"/>
+        </insert>
+        <insert tableName="users">
+            <column name="id" valueNumeric="4"/>
+            <column name="email" value="bob.brown@example.com"/>
+            <column name="password" value="password4"/>
+            <column name="name" value="Bob Brown"/>
+        </insert>
+        <insert tableName="users">
+            <column name="id" valueNumeric="5"/>
+            <column name="email" value="carol.white@example.com"/>
+            <column name="password" value="password5"/>
+            <column name="name" value="Carol White"/>
+        </insert>
+
+        <!-- Скил для Jane Doe -->
+        <insert tableName="skills">
+            <column name="id" valueNumeric="1"/>
+            <column name="name" value="Web Development"/>
+            <column name="description" value="Creating and maintaining websites"/>
+            <column name="user_id" valueNumeric="1"/>
+        </insert>
+        <!-- Скил для John Smith -->
+        <insert tableName="skills">
+            <column name="id" valueNumeric="2"/>
+            <column name="name" value="Graphic Design"/>
+            <column name="description" value="Designing visuals for web and print"/>
+            <column name="user_id" valueNumeric="2"/>
+        </insert>
+        <!-- Скил для Alice Jones -->
+        <insert tableName="skills">
+            <column name="id" valueNumeric="3"/>
+            <column name="name" value="Data Analysis"/>
+            <column name="description" value="Interpreting data to inform business decisions"/>
+            <column name="user_id" valueNumeric="3"/>
+        </insert>
+        <!-- Скил для Bob Brown -->
+        <insert tableName="skills">
+            <column name="id" valueNumeric="4"/>
+            <column name="name" value="Digital Marketing"/>
+            <column name="description" value="Promoting products or brands via digital channels"/>
+            <column name="user_id" valueNumeric="4"/>
+        </insert>
+        <!-- Скил для Carol White -->
+        <insert tableName="skills">
+            <column name="id" valueNumeric="5"/>
+            <column name="name" value="Project Management"/>
+            <column name="description" value="Planning and organizing projects"/>
+            <column name="user_id" valueNumeric="5"/>
+        </insert>
+
+        <!-- Предложение для скилла Web Development от Jane Doe -->
+        <insert tableName="skill_offers">
+            <column name="id" valueNumeric="1"/>
+            <column name="user_id" valueNumeric="1"/>
+            <column name="skill_id" valueNumeric="1"/>
+            <column name="description" value="Offering comprehensive web development courses from HTML to React."/>
+        </insert>
+        <!-- Предложение для скилла Graphic Design от John Smith -->
+        <insert tableName="skill_offers">
+            <column name="id" valueNumeric="2"/>
+            <column name="user_id" valueNumeric="2"/>
+            <column name="skill_id" valueNumeric="2"/>
+            <column name="description" value="Graphic design lessons for beginners to advanced, including Photoshop and Illustrator."/>
+        </insert>
+        <!-- Предложение для скилла Data Analysis от Alice Jones -->
+        <insert tableName="skill_offers">
+            <column name="id" valueNumeric="3"/>
+            <column name="user_id" valueNumeric="3"/>
+            <column name="skill_id" valueNumeric="3"/>
+            <column name="description" value="Data analysis courses covering SQL, Python, and data visualization tools."/>
+        </insert>
+        <!-- Предложение для скилла Digital Marketing от Bob Brown -->
+        <insert tableName="skill_offers">
+            <column name="id" valueNumeric="4"/>
+            <column name="user_id" valueNumeric="4"/>
+            <column name="skill_id" valueNumeric="4"/>
+            <column name="description" value="Learn digital marketing strategies, SEO, social media marketing, and more."/>
+        </insert>
+        <!-- Предложение для скилла Project Management от Carol White -->
+        <insert tableName="skill_offers">
+            <column name="id" valueNumeric="5"/>
+            <column name="user_id" valueNumeric="5"/>
+            <column name="skill_id" valueNumeric="5"/>
+            <column name="description" value="Project management from the ground up, covering Agile, Scrum, and Kanban methodologies."/>
+        </insert>
+
+        <!-- Сессия для предложения Web Development от Jane Doe -->
+        <insert tableName="skill_sessions">
+            <column name="id" valueNumeric="1"/>
+            <column name="offer_id" valueNumeric="1"/>
+            <column name="session_date" value="2023-06-01T10:00:00"/>
+            <column name="status" value="PLANNED"/>
+        </insert>
+        <!-- Сессия для предложения Graphic Design от John Smith -->
+        <insert tableName="skill_sessions">
+            <column name="id" valueNumeric="2"/>
+            <column name="offer_id" valueNumeric="2"/>
+            <column name="session_date" value="2023-06-15T11:00:00"/>
+            <column name="status" value="PLANNED"/>
+        </insert>
+        <!-- Сессия для предложения Data Analysis от Alice Jones -->
+        <insert tableName="skill_sessions">
+            <column name="id" valueNumeric="3"/>
+            <column name="offer_id" valueNumeric="3"/>
+            <column name="session_date" value="2023-07-01T09:00:00"/>
+            <column name="status" value="PLANNED"/>
+        </insert>
+        <!-- Сессия для предложения Digital Marketing от Bob Brown -->
+        <insert tableName="skill_sessions">
+            <column name="id" valueNumeric="4"/>
+            <column name="offer_id" valueNumeric="4"/>
+            <column name="session_date" value="2023-07-20T14:00:00"/>
+            <column name="status" value="PLANNED"/>
+        </insert>
+        <!-- Сессия для предложения Project Management от Carol White -->
+        <insert tableName="skill_sessions">
+            <column name="id" valueNumeric="5"/>
+            <column name="offer_id" valueNumeric="5"/>
+            <column name="session_date" value="2023-08-05T16:00:00"/>
+            <column name="status" value="PLANNED"/>
+        </insert>
+
+        <!-- Обратная связь для сессии Web Development от Jane Doe -->
+        <insert tableName="feedbacks">
+            <column name="id" valueNumeric="1"/>
+            <column name="session_id" valueNumeric="1"/>
+            <column name="user_id" valueNumeric="2"/>
+            <column name="content" value="Incredibly informative session, can't wait for the next one!"/>
+            <column name="rating" valueNumeric="5"/>
+            <column name="created_date" value="2023-06-01T12:00:00"/>
+        </insert>
+        <!-- Обратная связь для сессии Graphic Design от John Smith -->
+        <insert tableName="feedbacks">
+            <column name="id" valueNumeric="2"/>
+            <column name="session_id" valueNumeric="2"/>
+            <column name="user_id" valueNumeric="3"/>
+            <column name="content" value="Loved the creativity and techniques shared. Highly recommend."/>
+            <column name="rating" valueNumeric="5"/>
+            <column name="created_date" value="2023-06-15T13:00:00"/>
+        </insert>
+        <!-- Обратная связь для сессии Data Analysis от Alice Jones -->
+        <insert tableName="feedbacks">
+            <column name="id" valueNumeric="3"/>
+            <column name="session_id" valueNumeric="3"/>
+            <column name="user_id" valueNumeric="4"/>
+            <column name="content" value="The session was packed with valuable insights on data analysis."/>
+            <column name="rating" valueNumeric="5"/>
+            <column name="created_date" value="2023-07-01T11:00:00"/>
+        </insert>
+        <!-- Обратная связь для сессии Digital Marketing от Bob Brown -->
+        <insert tableName="feedbacks">
+            <column name="id" valueNumeric="4"/>
+            <column name="session_id" valueNumeric="4"/>
+            <column name="user_id" valueNumeric="5"/>
+            <column name="content" value="This session opened new horizons for my marketing strategies."/>
+            <column name="rating" valueNumeric="5"/>
+            <column name="created_date" value="2023-07-20T16:00:00"/>
+        </insert>
+        <!-- Обратная связь для сессии Project Management от Carol White -->
+        <insert tableName="feedbacks">
+            <column name="id" valueNumeric="5"/>
+            <column name="session_id" valueNumeric="5"/>
+            <column name="user_id" valueNumeric="1"/>
+            <column name="content" value="A well-structured and incredibly helpful session on project management."/>
+            <column name="rating" valueNumeric="5"/>
+            <column name="created_date" value="2023-08-05T18:00:00"/>
+        </insert>
+
+    </changeSet>
+</databaseChangeLog>
