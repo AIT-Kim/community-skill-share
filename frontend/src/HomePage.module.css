@@ -10,8 +10,12 @@
     width: 100%;
 }
 
-.header {
+.header h1 {
     margin: 40px 0 20px;
+    font-size: 5vw;
+    min-font-size: 16px;
+    max-font-size: 20px;
+    white-space: nowrap;
 }
 
 .nav .menu {

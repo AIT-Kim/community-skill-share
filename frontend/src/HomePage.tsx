@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import styles from './HomePage.module.css';
+import {Link} from "react-router-dom";
 
 interface Feature {
     message: string;
@@ -24,15 +25,17 @@ const HomePage: React.FC = () => {
             <nav className={styles.nav}>
                 <ul className={styles.menu}>
                     <li>Home</li>
+                    <Link to="/skill-offers"><li>Skill Offers</li></Link>
                     <li>About</li>
                     <li>Services</li>
                     <li>Contact</li>
                 </ul>
             </nav>
             <main className={styles.main}>
+                <h2>Features</h2>
                 {data && data.features.map((feature, index) => (
                     <section className={styles.feature} key={index}>
-                        <h2>{feature}</h2>
+                        <h3>{feature}</h3>
                         <p>Description of the feature.</p>
                     </section>
                 ))}
