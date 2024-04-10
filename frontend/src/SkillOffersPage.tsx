@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import Menu from "./Menu.tsx";
+import Footer from "./Footer.tsx";
 
 interface SkillOffer {
     id: number;
@@ -22,6 +24,7 @@ const SkillOffersPage: React.FC = () => {
 
     return (
         <div>
+            <Menu />
             <h1>Skill Offers</h1>
             {offers ? (
                 <ul>
@@ -35,6 +38,7 @@ const SkillOffersPage: React.FC = () => {
             ) : (
                 <p>Loading...</p>
             )}
+            <Footer />
         </div>
     );
 };

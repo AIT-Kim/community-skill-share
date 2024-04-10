@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import Menu from "./Menu.tsx";
+import Footer from "./Footer.tsx";
 
 interface User {
     id: number;
@@ -20,6 +22,7 @@ const UserPage: React.FC = () => {
 
     return (
         <div>
+            <Menu />
             <h1>User Profile</h1>
             {user ? (
                 <div>
@@ -29,6 +32,7 @@ const UserPage: React.FC = () => {
             ) : (
                 <p>Loading...</p>
             )}
+            <Footer />
         </div>
     );
 };

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import styles from './HomePage.module.css';
-import {Link} from "react-router-dom";
+import Menu from './Menu';
+import Footer from './Footer';
 
 interface Feature {
     message: string;
@@ -22,15 +23,7 @@ const HomePage: React.FC = () => {
             <header className={styles.header}>
                 <h1>{data ? data.message : 'Loading...'}</h1>
             </header>
-            <nav className={styles.nav}>
-                <ul className={styles.menu}>
-                    <li>Home</li>
-                    <Link to="/skill-offers"><li>Skill Offers</li></Link>
-                    <li>About</li>
-                    <li>Services</li>
-                    <li>Contact</li>
-                </ul>
-            </nav>
+            <Menu />
             <main className={styles.main}>
                 <h2>Features</h2>
                 {data && data.features.map((feature, index) => (
@@ -40,9 +33,7 @@ const HomePage: React.FC = () => {
                     </section>
                 ))}
             </main>
-            <footer className={styles.footer}>
-                <p>&copy; 2024 </p>
-            </footer>
+            <Footer />
         </div>
     );
 };

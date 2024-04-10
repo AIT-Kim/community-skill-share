@@ -27,6 +27,15 @@
     margin-bottom: 40px;
 }
 
+.nav .menu li a {
+    color: aliceblue;
+}
+
+.nav .menu li a:hover {
+    color: deepskyblue;
+}
+
+
 .menu li {
     cursor: pointer;
     padding: 10px;
