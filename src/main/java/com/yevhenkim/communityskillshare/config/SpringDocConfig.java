@@ -25,6 +25,6 @@ public class SpringDocConfig {
                         .title("Community Skill Share API")
                         .version("1.0")
                         .description("API for Community Skill Share Application")
-                        .contact(new Contact().name("Yevhen Kim").email("evgeniikim@gmail.com")));
+                        .contact(new Contact().name("Developer").email("evgeniikim@gmail.com")));
     }
 }
