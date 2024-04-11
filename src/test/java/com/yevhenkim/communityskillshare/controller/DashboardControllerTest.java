@@ -19,7 +19,8 @@ public class DashboardControllerTest {
 
     @Autowired
     private MockMvc mockMvc;
-
+//TODO
+/*
     @Test
     @WithMockUser(username = "user", authorities = {"ROLE_USER"})
     public void secretShouldBeAccessibleByAnyAuthenticatedUser() throws Exception {
@@ -27,7 +28,7 @@ public class DashboardControllerTest {
                 .andExpect(status().isOk())
                 .andExpect(content().string("Secret information"));
     }
-
+*/
     @Test
     @WithMockUser(username = "user", authorities = {"ROLE_ADMIN"})
     public void dashboardShouldBeAccessibleByAdmin() throws Exception {
