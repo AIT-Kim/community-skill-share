@@ -1,5 +1,7 @@
 package com.yevhenkim.communityskillshare.controller;
 
+import com.yevhenkim.communityskillshare.dto.LoginRequest;
+import com.yevhenkim.communityskillshare.dto.LoginResponse;
 import com.yevhenkim.communityskillshare.model.User;
 import com.yevhenkim.communityskillshare.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,6 +19,7 @@ public class UserController {
         this.userService = userService;
     }
 
+
     @PostMapping("/register")
     public ResponseEntity<User> registerUser(@RequestBody User user) {
         User registeredUser = userService.registerUser(user);
@@ -27,6 +30,12 @@ public class UserController {
     public ResponseEntity<User> getUserById(@PathVariable Long userId) {
         User user = userService.findUserById(userId);
         return user != null ? ResponseEntity.ok(user) : ResponseEntity.notFound().build();
+    }
+
+    @PostMapping("/login")
+    public ResponseEntity<LoginResponse> login(@RequestBody LoginRequest loginRequest) {
+        LoginResponse loginResponse = userService.login(loginRequest);
+        return ResponseEntity.ok(loginResponse);
     }
 
 }
