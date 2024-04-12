@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import styles from './HomePage.module.css';
-import Menu from './Menu';
 import Footer from './Footer';
+import api from './api';
 
 interface Feature {
     message: string;
@@ -12,8 +12,8 @@ const HomePage: React.FC = () => {
     const [data, setData] = useState<Feature | null>(null);
 
     useEffect(() => {
-        fetch('/api/home')
-            .then((response) => response.json())
+        api.get('/home')
+            .then((response) => response.data)
             .then((data: Feature) => setData(data))
             .catch((error) => console.error("Failed to fetch data:", error));
     }, []);
@@ -23,7 +23,6 @@ const HomePage: React.FC = () => {
             <header className={styles.header}>
                 <h1>{data ? data.message : 'Loading...'}</h1>
             </header>
-            <Menu />
             <main className={styles.main}>
                 <h2>Features</h2>
                 {data && data.features.map((feature, index) => (

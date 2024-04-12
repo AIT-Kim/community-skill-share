@@ -6,6 +6,7 @@ import com.yevhenkim.communityskillshare.model.Skill;
 import com.yevhenkim.communityskillshare.model.User;
 import com.yevhenkim.communityskillshare.repository.UserRepository;
 import com.yevhenkim.communityskillshare.secutiry.JwtTokenProvider;
+import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
@@ -46,6 +47,17 @@ public class UserService {
         return user.orElse(null);
     }
 
+    public User findUserById(String id) {
+        Long longId;
+        try {
+            longId = Long.parseLong(id);
+        } catch (NumberFormatException e) {
+            throw new IllegalArgumentException("Invalid user ID format: " + id, e);
+        }
+        Optional<User> user = userRepository.findById(longId);
+        return user.orElse(null);
+    }
+
     public User findUserByEmail(String email) {
         Optional<User> user = userRepository.findByEmail(email);
         return user.orElse(null);
@@ -71,7 +83,7 @@ public class UserService {
         if (!passwordEncoder.matches(request.getPassword(), user.getPassword())) {
             throw new BadCredentialsException("Invalid username or password");
         }
-        
+
         String jwt = tokenProvider.generateToken(user);
 
         var response = new LoginResponse();
@@ -81,7 +93,20 @@ public class UserService {
 
         return response;
     }
+/*
+//Check With DB - not needed
+    public User getUserFromRequest(HttpServletRequest request) {
+        String token = tokenProvider.resolveToken(request);
+        String userid = tokenProvider.getUserid(token);
+        return findUserById(userid);
+    }
+*/
+    public String getUserFromRequest(HttpServletRequest request) {
+        String token = tokenProvider.resolveToken(request);
+        String userId = tokenProvider.getUserid(token);
 
+        return userId;
+    }
 
 }
 

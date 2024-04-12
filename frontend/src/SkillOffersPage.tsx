@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import Menu from "./Menu.tsx";
 import Footer from "./Footer.tsx";
 
 interface SkillOffer {
@@ -24,14 +23,13 @@ const SkillOffersPage: React.FC = () => {
 
     return (
         <div>
-            <Menu />
             <h1>Skill Offers</h1>
             {offers ? (
                 <ul>
                     {offers.map((offer, index) => (
                         <li key={index}>
                             <h2><Link to={`/offer/${offer.id}`}>{offer.description}</Link></h2>
-                            <p>Offered by: <Link to={`/user/${offer.user_id}`}>{offer.user}</Link></p>
+                            <p>Offered by: <Link to={`/users/${offer.user_id}`}>{offer.user}</Link></p>
                         </li>
                     ))}
                 </ul>
